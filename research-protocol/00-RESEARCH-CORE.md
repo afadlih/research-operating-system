@@ -48,7 +48,7 @@ Apply the protocol while research is being planned or executed.
 
 Use it across:
 
-**problem -> research question -> literature -> gap -> method -> data -> experiment -> evaluation -> analysis -> discussion -> conclusion**
+**problem -> evidence/literature -> research gap -> research question -> methodology -> data collection / experiment -> evaluation and analysis -> discussion / writing -> conclusion -> audit**
 
 Goal: prevent methodological and reasoning defects before they propagate.
 
