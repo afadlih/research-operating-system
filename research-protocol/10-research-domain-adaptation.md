@@ -10,19 +10,19 @@ This module extends the general research protocol.
 The core research system remains universal:
 
     research problem
-            ↓
+            v
     research question
-            ↓
+            v
     evidence
-            ↓
+            v
     method
-            ↓
+            v
     data
-            ↓
+            v
     analysis
-            ↓
+            v
     conclusion
-            ↓
+            v
     verification
 
 However, different disciplines require different methodological
@@ -126,27 +126,27 @@ Focus on:
 
     Problem
 
-    ↓
+    v
 
     Dataset / Environment
 
-    ↓
+    v
 
     Method
 
-    ↓
+    v
 
     Experiment
 
-    ↓
+    v
 
     Evaluation
 
-    ↓
+    v
 
     Error Analysis
 
-    ↓
+    v
 
     Conclusion Boundary
 

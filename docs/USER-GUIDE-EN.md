@@ -34,8 +34,8 @@ See the [Platform Usage Map](PLATFORM-USAGE-MAP.md) for detailed platform-specif
 
 Every research task requires at minimum:
 
-1. `research-protocol/RESEARCH.md` — the main router
-2. `research-protocol/00-RESEARCH-CORE.md` — universal research rules
+1. `research-protocol/RESEARCH.md` - the main router
+2. `research-protocol/00-RESEARCH-CORE.md` - universal research rules
 
 ### 4. Upload Task-Specific Modules
 
@@ -73,8 +73,8 @@ Do not jump directly to writing.
 Follow this general order:
 
 ```
-Problem → Research Question → Literature Evidence → Methodology
-→ Data Collection → Experiment → Analysis → Writing → Final Audit
+Problem  ->  Research Question  ->  Literature Evidence  ->  Methodology
+ ->  Data Collection  ->  Experiment  ->  Analysis  ->  Writing  ->  Final Audit
 ```
 
 **Do not skip ahead.** Each stage builds on the previous one.
@@ -134,8 +134,8 @@ See [10-research-domain-adaptation.md](../research-protocol/10-research-domain-a
 
 ## Need Help?
 
-- [File Function Map](FILE-FUNCTION-MAP.md) — what each file does
-- [Platform Usage Map](PLATFORM-USAGE-MAP.md) — platform setup details
-- [Prompt Library (EN)](../prompts/PROMPT-LIBRARY-EN.md) — ready-to-use prompts
-- [Pustaka Prompt (ID)](../prompts/PROMPT-LIBRARY-ID.md) — prompt siap pakai
-- [RESEARCH.md](../research-protocol/RESEARCH.md) — the main router with full task routing table
+- [File Function Map](FILE-FUNCTION-MAP.md) - what each file does
+- [Platform Usage Map](PLATFORM-USAGE-MAP.md) - platform setup details
+- [Prompt Library (EN)](../prompts/PROMPT-LIBRARY-EN.md) - ready-to-use prompts
+- [Pustaka Prompt (ID)](../prompts/PROMPT-LIBRARY-ID.md) - prompt siap pakai
+- [RESEARCH.md](../research-protocol/RESEARCH.md) - the main router with full task routing table

@@ -137,23 +137,23 @@ explain:
 Follow this general order:
 
     problem
-      ↓
+      v
     research question
-      ↓
+      v
     literature evidence
-      ↓
+      v
     methodology
-      ↓
+      v
     data collection
-      ↓
+      v
     experiment
-      ↓
+      v
     analysis
-      ↓
+      v
     interpretation
-      ↓
+      v
     writing
-      ↓
+      v
     final audit
 
 Do not optimize writing before research validity is established.

@@ -8,7 +8,7 @@ Thank you for your interest in contributing! This project aims to help researche
 
 ### Reporting Issues
 
-- Use [GitHub Issues](../../issues) to report bugs, broken links, or unclear documentation.
+- Use [GitHub Issues](https://github.com/afadlih/research-operating-system/issues) to report bugs, broken links, or unclear documentation.
 - Include the file name and section where you found the issue.
 - Describe what you expected vs. what you found.
 
@@ -33,7 +33,7 @@ Thank you for your interest in contributing! This project aims to help researche
 ### Content Standards
 
 - **Preserve evidence-based research practices.** Do not weaken integrity rules, verification requirements, or traceability standards.
-- **Keep modules focused.** Each module has a specific purpose — do not merge unrelated concerns.
+- **Keep modules focused.** Each module has a specific purpose - do not merge unrelated concerns.
 - **Use clear, direct language.** Avoid generic academic filler or vague statements.
 - **Test all markdown links.** Broken references degrade the user experience.
 

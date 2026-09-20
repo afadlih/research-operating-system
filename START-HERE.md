@@ -21,22 +21,22 @@ Instead of AI giving you generic answers, it will:
 
 ## Setup Steps
 
-### Step 1 — Read the README
+### Step 1 - Read the README
 
 Read [README.md](README.md) to understand what the system does and how it is structured.
 
-### Step 2 — Choose Your Language
+### Step 2 - Choose Your Language
 
 Pick the user guide for your preferred language:
 
-- **Bahasa Indonesia** — [docs/USER-GUIDE-ID.md](docs/USER-GUIDE-ID.md)
-- **English** — [docs/USER-GUIDE-EN.md](docs/USER-GUIDE-EN.md)
+- **Bahasa Indonesia** - [docs/USER-GUIDE-ID.md](docs/USER-GUIDE-ID.md)
+- **English** - [docs/USER-GUIDE-EN.md](docs/USER-GUIDE-EN.md)
 
-### Step 3 — Understand the Router
+### Step 3 - Understand the Router
 
-Read [research-protocol/RESEARCH.md](research-protocol/RESEARCH.md) — this is the **main control file** that decides which modules to use for each task.
+Read [research-protocol/RESEARCH.md](research-protocol/RESEARCH.md) - this is the **main control file** that decides which modules to use for each task.
 
-### Step 4 — Pick Your Workflow
+### Step 4 - Pick Your Workflow
 
 Choose the workflow that matches your current research stage:
 
@@ -51,11 +51,11 @@ Choose the workflow that matches your current research stage:
 | Writing chapters | CORE + relevant module + WRITING |
 | Final audit | CORE + ALL modules used |
 
-### Step 5 — Upload to Your AI Platform
+### Step 5 - Upload to Your AI Platform
 
 See [docs/PLATFORM-USAGE-MAP.md](docs/PLATFORM-USAGE-MAP.md) for platform-specific upload instructions.
 
-### Step 6 — Use Prompt Templates
+### Step 6 - Use Prompt Templates
 
 Use ready-made prompts from the Prompt Library ([English](prompts/PROMPT-LIBRARY-EN.md) | [Indonesia](prompts/PROMPT-LIBRARY-ID.md)) to get started quickly.
 
@@ -64,8 +64,8 @@ Use ready-made prompts from the Prompt Library ([English](prompts/PROMPT-LIBRARY
 ## Important Rules
 
 1. **Never load every file at once** without a specific purpose. Load only what your current task needs.
-2. **Always load `00-RESEARCH-CORE.md`** — it contains the universal research integrity rules.
-3. **Follow the workflow order:** Router → Module → Task → Audit.
+2. **Always load `00-RESEARCH-CORE.md`** - it contains the universal research integrity rules.
+3. **Follow the workflow order:** Router  ->  Module  ->  Task  ->  Audit.
 4. **Do not skip the audit phase.** It ensures your research meets integrity standards.
 
 ---
@@ -82,4 +82,4 @@ ChatGPT Projects is recommended for the full workflow. See the [Platform Usage M
 Yes! The system supports 10+ research domains. See [10-research-domain-adaptation.md](research-protocol/10-research-domain-adaptation.md).
 
 **Q: Will AI write my entire thesis?**
-No. Research OS prevents that. It helps you think and research — not skip the work.
+No. Research OS prevents that. It helps you think and research - not skip the work.

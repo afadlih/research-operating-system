@@ -1,11 +1,11 @@
-<![CDATA[# Research Operating System v1.0.0
+# Research Operating System v1.0.0
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
 
-**A modular AI-powered research framework that turns AI into a disciplined research collaborator — not an answer generator.**
+**A modular AI-powered research framework that turns AI into a disciplined research collaborator - not an answer generator.**
 
-> Use AI to support real academic research: literature review, methodology design, experiment validation, analysis, and writing — with built-in evidence discipline and integrity checks.
+> Use AI to support real academic research: literature review, methodology design, experiment validation, analysis, and writing - with built-in evidence discipline and integrity checks.
 
 ---
 
@@ -29,12 +29,12 @@ Research Operating System (Research OS) is a collection of structured protocol f
 
 It helps with:
 
-- **Literature review** — source evaluation, evidence synthesis, gap identification
-- **Research planning** — problem definition, research question formulation
-- **Methodology design** — research design, variables, sampling, validity
-- **Experiment validation** — leakage prevention, baseline fairness, reproducibility
-- **Analysis** — statistical testing, uncertainty, interpretation boundaries
-- **Academic writing** — evidence-based prose, terminology consistency, citation accuracy
+- **Literature review** - source evaluation, evidence synthesis, gap identification
+- **Research planning** - problem definition, research question formulation
+- **Methodology design** - research design, variables, sampling, validity
+- **Experiment validation** - leakage prevention, baseline fairness, reproducibility
+- **Analysis** - statistical testing, uncertainty, interpretation boundaries
+- **Academic writing** - evidence-based prose, terminology consistency, citation accuracy
 
 ### What It Is NOT
 
@@ -70,11 +70,11 @@ It helps with:
 
 The system uses a **modular architecture**:
 
-1. **Router** (`RESEARCH.md`) — determines which modules to load based on your task
-2. **Core** (`00-RESEARCH-CORE.md`) — universal research integrity rules (always loaded)
-3. **Specialized Modules** — loaded only when needed:
+1. **Router** (`RESEARCH.md`) - determines which modules to load based on your task
+2. **Core** (`00-RESEARCH-CORE.md`) - universal research integrity rules (always loaded)
+3. **Specialized Modules** - loaded only when needed:
    - `01` Writing | `02` Human subjects | `03` Literature | `04` Methodology | `05` Experiment | `06` Analysis
-4. **Support Files** — audit, decision log, project context, domain adaptation, background generator
+4. **Support Files** - audit, decision log, project context, domain adaptation, background generator
 
 **Principle: load only what you need.** Never upload all files at once without purpose.
 
@@ -82,16 +82,16 @@ The system uses a **modular architecture**:
 
 ## Quick Start
 
-### Step 1 — Understand the System
+### Step 1 - Understand the System
 
 Read [START-HERE.md](START-HERE.md) for a beginner-friendly overview.
 
-### Step 2 — Choose Your Language
+### Step 2 - Choose Your Language
 
-- **Bahasa Indonesia** — [Panduan Pengguna](docs/USER-GUIDE-ID.md)
-- **English** — [User Guide](docs/USER-GUIDE-EN.md)
+- **Bahasa Indonesia** - [Panduan Pengguna](docs/USER-GUIDE-ID.md)
+- **English** - [User Guide](docs/USER-GUIDE-EN.md)
 
-### Step 3 — Choose Your AI Platform
+### Step 3 - Choose Your AI Platform
 
 | Platform | What to Upload | Guide |
 |---|---|---|
@@ -101,7 +101,7 @@ Read [START-HERE.md](START-HERE.md) for a beginner-friendly overview.
 | NotebookLM | Papers + literature module | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
 | Coding Agents | `AGENTS.md` | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
 
-### Step 4 — Start Your Research
+### Step 4 - Start Your Research
 
 Use the Prompt Library ([English](prompts/PROMPT-LIBRARY-EN.md) | [Indonesia](prompts/PROMPT-LIBRARY-ID.md)) for ready-to-use prompts, or follow the research lifecycle in [RESEARCH.md](research-protocol/RESEARCH.md).
 
@@ -123,41 +123,41 @@ Use the Prompt Library ([English](prompts/PROMPT-LIBRARY-EN.md) | [Indonesia](pr
 
 ```
 research-operating-system/
-│
-├── README.md                          # You are here
-├── START-HERE.md                      # Beginner onboarding guide
-├── LICENSE                            # MIT License
-├── CONTRIBUTING.md                    # How to contribute
-├── CHANGELOG.md                       # Version history
-│
-├── docs/                              # User documentation
-│   ├── USER-GUIDE-EN.md               # English user guide
-│   ├── USER-GUIDE-ID.md               # Panduan pengguna (Indonesia)
-│   ├── FILE-FUNCTION-MAP.md           # What each file does
-│   └── PLATFORM-USAGE-MAP.md         # Platform-specific setup
-│
-├── prompts/                           # Ready-to-use prompt templates
-│   ├── PROMPT-LIBRARY-EN.md          # Prompt collection (English)
-│   └── PROMPT-LIBRARY-ID.md          # Pustaka prompt (Indonesia)
-│
-├── research-protocol/                 # Core protocol files
-│   ├── RESEARCH.md                    # Main router (start here for research)
-│   ├── AGENTS.md                      # AI agent configuration
-│   ├── 00-RESEARCH-CORE.md            # Universal research rules
-│   ├── 01-research-writing.md         # Academic writing module
-│   ├── 02-research-human.md           # Human subjects module
-│   ├── 03-research-literature.md      # Literature review module
-│   ├── 04-research-methodology.md     # Methodology design module
-│   ├── 05-research-experiment.md      # Experiment validation module
-│   ├── 06-research-analysis.md        # Analysis module
-│   ├── 07-research-audit.md           # Final audit module
-│   ├── 08-research-decision-log.md    # Decision tracking template
-│   ├── 09-project-context-template.md # Project context template
-│   ├── 10-research-domain-adaptation.md # Multi-domain support
-│   └── 11-research-background-generator.md # Background section guide
-│
-└── assets/
-    └── images/                        # Diagrams and visuals
+|
+|-- README.md                          # You are here
+|-- START-HERE.md                      # Beginner onboarding guide
+|-- LICENSE                            # MIT License
+|-- CONTRIBUTING.md                    # How to contribute
+|-- CHANGELOG.md                       # Version history
+|
+|-- docs/                              # User documentation
+|   |-- USER-GUIDE-EN.md               # English user guide
+|   |-- USER-GUIDE-ID.md               # Panduan pengguna (Indonesia)
+|   |-- FILE-FUNCTION-MAP.md           # What each file does
+|   \-- PLATFORM-USAGE-MAP.md         # Platform-specific setup
+|
+|-- prompts/                           # Ready-to-use prompt templates
+|   |-- PROMPT-LIBRARY-EN.md          # Prompt collection (English)
+|   \-- PROMPT-LIBRARY-ID.md          # Pustaka prompt (Indonesia)
+|
+|-- research-protocol/                 # Core protocol files
+|   |-- RESEARCH.md                    # Main router (start here for research)
+|   |-- AGENTS.md                      # AI agent configuration
+|   |-- 00-RESEARCH-CORE.md            # Universal research rules
+|   |-- 01-research-writing.md         # Academic writing module
+|   |-- 02-research-human.md           # Human subjects module
+|   |-- 03-research-literature.md      # Literature review module
+|   |-- 04-research-methodology.md     # Methodology design module
+|   |-- 05-research-experiment.md      # Experiment validation module
+|   |-- 06-research-analysis.md        # Analysis module
+|   |-- 07-research-audit.md           # Final audit module
+|   |-- 08-research-decision-log.md    # Decision tracking template
+|   |-- 09-project-context-template.md # Project context template
+|   |-- 10-research-domain-adaptation.md # Multi-domain support
+|   \-- 11-research-background-generator.md # Background section guide
+|
+\-- assets/
+    \-- images/                        # Diagrams and visuals
 ```
 
 ---
@@ -190,6 +190,6 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 <p align="center">
-  <strong>Research Operating System</strong> — Evidence before prose. Verification before PASS.
+  <strong>Research Operating System</strong> - Evidence before prose. Verification before PASS.
 </p>
-]]>
+

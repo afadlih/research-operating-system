@@ -12,17 +12,17 @@ It does not exist to generate generic academic paragraphs.
 Its purpose is to ensure that a background section logically connects:
 
     phenomenon
-        ↓
+        v
     evidence
-        ↓
+        v
     problem
-        ↓
+        v
     previous research
-        ↓
+        v
     limitations
-        ↓
+        v
     research gap
-        ↓
+        v
     research objective
 
 Priority:
@@ -296,23 +296,23 @@ Use:
 
     Literature evidence
 
-    ↓
+    v
 
     Argument map
 
-    ↓
+    v
 
     Background draft
 
-    ↓
+    v
 
     Evidence audit
 
-    ↓
+    v
 
     Writing audit
 
-    ↓
+    v
 
     Final version
 

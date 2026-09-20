@@ -34,8 +34,8 @@ Lihat [Platform Usage Map](PLATFORM-USAGE-MAP.md) untuk instruksi per platform.
 
 Setiap tugas penelitian minimal membutuhkan:
 
-1. `research-protocol/RESEARCH.md` — router utama
-2. `research-protocol/00-RESEARCH-CORE.md` — aturan integritas penelitian universal
+1. `research-protocol/RESEARCH.md` - router utama
+2. `research-protocol/00-RESEARCH-CORE.md` - aturan integritas penelitian universal
 
 ### 4. Upload Modul Sesuai Tugas
 
@@ -73,8 +73,8 @@ Jangan langsung ke tahap penulisan.
 Ikuti urutan umum berikut:
 
 ```
-Masalah → Pertanyaan Penelitian → Bukti Literatur → Metodologi
-→ Pengumpulan Data → Eksperimen → Analisis → Penulisan → Audit Akhir
+Masalah  ->  Pertanyaan Penelitian  ->  Bukti Literatur  ->  Metodologi
+ ->  Pengumpulan Data  ->  Eksperimen  ->  Analisis  ->  Penulisan  ->  Audit Akhir
 ```
 
 **Jangan melompati tahapan.** Setiap tahap dibangun dari tahap sebelumnya.
@@ -182,8 +182,8 @@ Lihat [10-research-domain-adaptation.md](../research-protocol/10-research-domain
 
 ## Butuh Bantuan?
 
-- [File Function Map](FILE-FUNCTION-MAP.md) — fungsi setiap file
-- [Platform Usage Map](PLATFORM-USAGE-MAP.md) — detail setup per platform
-- [Prompt Library (EN)](../prompts/PROMPT-LIBRARY-EN.md) — ready-to-use prompts
-- [Pustaka Prompt (ID)](../prompts/PROMPT-LIBRARY-ID.md) — prompt siap pakai
-- [RESEARCH.md](../research-protocol/RESEARCH.md) — router utama dengan tabel routing lengkap
+- [File Function Map](FILE-FUNCTION-MAP.md) - fungsi setiap file
+- [Platform Usage Map](PLATFORM-USAGE-MAP.md) - detail setup per platform
+- [Prompt Library (EN)](../prompts/PROMPT-LIBRARY-EN.md) - ready-to-use prompts
+- [Pustaka Prompt (ID)](../prompts/PROMPT-LIBRARY-ID.md) - prompt siap pakai
+- [RESEARCH.md](../research-protocol/RESEARCH.md) - router utama dengan tabel routing lengkap

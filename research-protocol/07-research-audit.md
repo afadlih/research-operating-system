@@ -30,7 +30,7 @@ Priority:
 
 Check:
 
-### Research Question ↔ Method
+### Research Question  <->  Method
 
 Question:
 
@@ -45,7 +45,7 @@ FAIL examples:
 
 ------------------------------------------------------------------------
 
-### Method ↔ Experiment
+### Method  <->  Experiment
 
 Question:
 
@@ -62,7 +62,7 @@ Check:
 
 ------------------------------------------------------------------------
 
-### Experiment ↔ Analysis
+### Experiment  <->  Analysis
 
 Question:
 
@@ -78,7 +78,7 @@ Check:
 
 ------------------------------------------------------------------------
 
-### Analysis ↔ Conclusion
+### Analysis  <->  Conclusion
 
 Question:
 
@@ -93,7 +93,7 @@ Check:
 
 ------------------------------------------------------------------------
 
-### Literature ↔ Research Gap
+### Literature  <->  Research Gap
 
 Question:
 
@@ -108,7 +108,7 @@ Check:
 
 ------------------------------------------------------------------------
 
-### Writing ↔ Evidence
+### Writing  <->  Evidence
 
 Question:
 

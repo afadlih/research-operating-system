@@ -417,6 +417,6 @@ Periksa:
 
 1. **Ganti teks dalam kurung siku** `[seperti ini]` dengan informasi Anda.
 2. **Upload modul yang diperlukan** yang tercantum di atas setiap prompt sebelum menggunakannya.
-3. **Kombinasikan prompt** sesuai kebutuhan — mulai dari perencanaan, lalu metodologi, lalu eksperimen, dst.
+3. **Kombinasikan prompt** sesuai kebutuhan - mulai dari perencanaan, lalu metodologi, lalu eksperimen, dst.
 4. **Jangan gunakan semua prompt sekaligus.** Ikuti urutan lifecycle penelitian.
 5. **Verifikasi output AI** terhadap sumber dan data aktual Anda.

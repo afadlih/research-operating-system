@@ -417,6 +417,6 @@ Check:
 
 1. **Replace bracketed text** `[like this]` with your actual information.
 2. **Upload the required modules** listed above each prompt before using it.
-3. **Combine prompts** as needed — start with research planning, then move to methodology, then experiment, etc.
+3. **Combine prompts** as needed - start with research planning, then move to methodology, then experiment, etc.
 4. **Do not use all prompts at once.** Follow the research lifecycle order.
 5. **Verify AI output** against your actual sources and data.
