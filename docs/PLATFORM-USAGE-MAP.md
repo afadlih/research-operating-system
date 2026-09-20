@@ -6,14 +6,14 @@ Operational setup instructions for each supported AI platform.
 
 ## Quick Reference
 
-| Platform | What to Upload | Best For | Role of AGENTS.md |
+| Platform | Recommended Minimum Upload | Best For | Role of AGENTS.md |
 |---|---|---|---|
-| **ChatGPT Projects** | `RESEARCH.md` + `CORE` + active modules + `PROJECT-CONTEXT.md` | Full research workflow (recommended) | Not needed |
-| **ChatGPT (Regular)**| `00-RESEARCH-CORE.md` + 1 active task module | Quick single-task sessions | Not needed |
+| **ChatGPT Projects** | `RESEARCH.md` + `CORE` + active modules + `PROJECT-CONTEXT.md` | Full research workflow (recommended) | Not needed (uses Project Instructions) |
+| **ChatGPT (Regular)**| `RESEARCH.md` + `00-RESEARCH-CORE.md` + 1 active task module | Quick single-task sessions | Not needed (manual lightweight mode available) |
 | **Gemini Gems** | `RESEARCH.md` + `CORE` + active modules + user papers | Knowledge-grounded sessions | Not needed |
-| **Claude Projects** | `RESEARCH.md` + `CORE` + active modules + context | Deep analysis & chapter review | Optional (or use `CLAUDE.md`) |
-| **NotebookLM** | User papers (PDFs) + `03-research-literature.md` | Source-grounded literature extraction | Not needed |
-| **Coding Agents** | `AGENTS.md` in root + `research-protocol/` in repo | Computational research in IDE | **Required** in project root |
+| **Claude Projects** | `RESEARCH.md` + `CORE` + active modules + context | Deep analysis & chapter review | Optional (or use `CLAUDE.md` for Claude Code) |
+| **NotebookLM** | User papers (PDFs) + `03-research-literature.md` | Source-grounded literature extraction | Not needed (strictly a literature tool) |
+| **Coding Agents** | Platform instruction file (`AGENTS.md` / `CLAUDE.md` / Copilot repo instructions) + `research-protocol/` | Computational research in IDE | **Required when supported by agent** |
 
 > **Universal Rule:** Upload only the modules relevant to your current task. Never upload all files at once without purpose.
 
@@ -21,7 +21,7 @@ Operational setup instructions for each supported AI platform.
 
 ## ChatGPT Projects (Recommended)
 
-ChatGPT Projects is recommended for managing a complete research lifecycle with persistent memory and document attachments.
+ChatGPT Projects is recommended for managing a complete research lifecycle with persistent project context through project chats, files, and instructions (distinct from permanent account-level memory).
 
 ### What to Upload to Project Files
 - `research-protocol/RESEARCH.md` (the main router)
@@ -58,21 +58,25 @@ Please confirm that you have loaded RESEARCH.md and 00-RESEARCH-CORE.md, review 
 
 For quick, single-task consultations without creating a Project.
 
-### What to Upload
-- Attach `research-protocol/00-RESEARCH-CORE.md`
+### Recommended Minimum Setup
+- Attach `research-protocol/RESEARCH.md` (default beginner recommendation to provide routing)
+- Attach `research-protocol/00-RESEARCH-CORE.md` (universal integrity rules)
 - Attach the 1 module specific to your task (e.g., `03-research-literature.md`)
+- Optional: `PROJECT-CONTEXT.md` when project-specific context materially matters to the answer.
+
+> **Lightweight / Manual Mode Notice:** `RESEARCH.md` may be omitted only when the user manually selects the correct module and does not need router behavior. For beginners, the default recommendation is to include `RESEARCH.md`.
 
 ### First Prompt
 ```
-I am attaching 00-RESEARCH-CORE.md and [Module Name].
+I am attaching RESEARCH.md, 00-RESEARCH-CORE.md, and [Module Name].
 Please act as a research collaborator for the following task: [Describe task].
 Do not jump to writing. Ask clarifying questions on evidence and methodology first.
 ```
 
 ### Limitations
-- **No persistent memory:** Context is lost when you close or start a new chat.
+- **No persistent project context:** Context is session-only and does not carry over between chats.
 - **Attachment limits:** Limited number of files per message.
-- **Context drift:** In long conversations, the model may forget early instructions.
+- **Context drift:** In extended conversations, models may gradually forget early instructions.
 
 ---
 
@@ -117,8 +121,8 @@ Claude Projects excel at long-context document analysis, multi-paper synthesis, 
 
 ### Role of `CLAUDE.md` vs `AGENTS.md`
 - In Claude Projects (web interface), upload the protocol markdown files to Project Knowledge and set project instructions.
-- If using **Claude Code** (CLI agent), place a `CLAUDE.md` in your project root pointing to `research-protocol/RESEARCH.md` (see [RESEARCH.md Section 21](../research-protocol/RESEARCH.md)).
-- `AGENTS.md` is reserved for IDE coding assistants (Cursor, Windsurf).
+- If using **Claude Code** (CLI agent), use `CLAUDE.md` where appropriate pointing to `research-protocol/RESEARCH.md` (see [RESEARCH.md Section 21](../research-protocol/RESEARCH.md)).
+- `research-protocol/AGENTS.md` serves as a generic template for coding agents that support it; adapt it to `CLAUDE.md` for Claude Code.
 
 ### Project Custom Instructions
 ```
@@ -145,8 +149,8 @@ NotebookLM is specifically designed for **source-grounded literature analysis** 
 - Identifying contradictions across source materials.
 
 ### Important Boundaries & Limitations
-- **Not for general research orchestration:** NotebookLM cannot plan experiments, write code, or route modular protocols.
-- **Do not treat as a full repository agent:** It only knows what you upload as sources.
+- **Strictly for source-grounded literature work:** NotebookLM answers only from uploaded sources.
+- **Do not treat as a full experiment/repository agent:** It cannot plan experiments, write code, or route modular protocols.
 - **Workflow:** Use NotebookLM for deep literature extraction, then take the extracted evidence matrices into ChatGPT Projects or Claude for methodology and writing.
 
 ---
@@ -155,8 +159,16 @@ NotebookLM is specifically designed for **source-grounded literature analysis** 
 
 For computational research, experiment code, data pipelines, and reproducible benchmarks.
 
+### Platform-Native Instruction Conventions
+Use `AGENTS.md` when your coding agent supports the `AGENTS.md` convention. Otherwise, use the platform-native instruction file:
+- **Claude Code:** Use `CLAUDE.md` where appropriate.
+- **GitHub Copilot:** Use the instruction format supported by the active Copilot environment, such as repository instructions and `AGENTS.md` where supported.
+- **Other coding agents (Cursor, Windsurf, Antigravity):** Follow the platform's native instruction-file convention.
+
+`research-protocol/AGENTS.md` is provided as the generic integration template, but users may need to copy or adapt it into the format required by their chosen coding agent.
+
 ### Setup Steps
-1. Copy `AGENTS.md` to the **root** of your research project repository:
+1. Place the adapted instruction file (e.g. `AGENTS.md` or `CLAUDE.md`) in the **root** of your research project repository:
    ```
    my-research-project/AGENTS.md
    ```
@@ -164,11 +176,10 @@ For computational research, experiment code, data pipelines, and reproducible be
    ```
    my-research-project/research-protocol/
    ```
-3. The coding agent will automatically discover `AGENTS.md` on startup.
 
 ### First Prompt to Coding Agent
 ```
-Read AGENTS.md and research-protocol/00-RESEARCH-CORE.md.
+Read your instruction file and research-protocol/00-RESEARCH-CORE.md.
 We are implementing the experiment pipeline for: [Describe experiment].
 Enforce zero data leakage, seed logging, baseline fairness, and reproducibility standards.
 ```

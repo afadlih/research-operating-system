@@ -13,10 +13,12 @@
 
 - [What Is This?](#what-is-this)
 - [Who Is This For?](#who-is-this-for)
+- [Canonical Research Lifecycle](#canonical-research-lifecycle)
 - [How It Works](#how-it-works)
 - [Beginner Journey](#beginner-journey)
 - [Using in Your Research Project](#using-in-your-research-project)
 - [Supported Platforms](#supported-platforms)
+- [Research Integrity and Disclaimers](#research-integrity-and-disclaimers)
 - [Repository Structure](#repository-structure)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
@@ -65,6 +67,24 @@ It helps with:
 
 ---
 
+## Canonical Research Lifecycle
+
+Research OS follows a strict evidence-before-claims lifecycle. Every stage requires verified outputs before advancing to the next:
+
+```
+Problem
+  -> Evidence / Literature
+    -> Research Gap
+      -> Research Question
+        -> Methodology
+          -> Data / Experiment
+            -> Analysis
+              -> Writing & Conclusion
+                -> Audit
+```
+
+---
+
 ## How It Works
 
 ![Research Operating System Workflow](assets/images/research-operating-system-workflow.png)
@@ -90,55 +110,84 @@ README
   -> START-HERE.md
     -> Choose Language (EN or ID)
       -> Choose Platform (ChatGPT, Claude, Gemini, NotebookLM, Coding Agents)
-        -> Choose Research Task (Topic, Literature, Methodology, etc.)
-          -> Upload Required Files (Router + CORE + Active Module)
-            -> Use Prompt Template (from Prompt Library)
-              -> Verify / Audit (before finalizing claims)
+        -> Create / Fill PROJECT-CONTEXT.md
+          -> Choose Current Research Task (following Canonical Lifecycle)
+            -> Upload Router + CORE + Active Module
+              -> Use Prompt Template (from Prompt Library)
+                -> Verify / Audit (before finalizing claims)
 ```
 
 ---
 
 ## Using in Your Research Project
 
-To use Research OS in your thesis or paper repository, copy only the protocol files into your working project:
+To use Research OS in your thesis or paper repository, organize your working directory as follows:
 
 ```
 my-research-project/
-|-- AGENTS.md                 # Optional: for coding agents (Cursor, Windsurf, Copilot)
-|-- PROJECT-CONTEXT.md        # User-created: copied from 09-project-context-template.md
-|-- research-protocol/        # Copied from Research OS
-|   |-- RESEARCH.md           # Main router
-|   |-- 00-RESEARCH-CORE.md   # Universal integrity rules (always required)
-|   \-- [relevant-modules].md # Only the modules needed for your active phase
-|-- literature/               # User-created: your papers, PDFs, notes, synthesis tables
-|-- methodology/              # User-created: study design, instruments, sampling
-|-- experiments/              # User-created: experiment code, notebooks, data runs
-|-- analysis/                 # User-created: analysis scripts, tables, stats output
-\-- manuscript/               # User-created: drafts, LaTeX / Word chapter files
+|-- AGENTS.md
+|   # Optional: adapted for supported coding agents
+|
+|-- PROJECT-CONTEXT.md
+|   # Created by user from 09-project-context-template.md
+|
+|-- research-protocol/
+|   |-- RESEARCH.md
+|   |-- 00-RESEARCH-CORE.md
+|   \-- [relevant-modules].md
+|
+|-- literature/
+|-- methodology/
+|-- experiments/
+|-- analysis/
+\-- manuscript/
 ```
 
-**What you copy from this repository:**
-- `research-protocol/` folder (or just `RESEARCH.md`, `00-RESEARCH-CORE.md`, and your active modules).
-- `09-project-context-template.md` (fill out and save as `PROJECT-CONTEXT.md` in your project).
-- `AGENTS.md` (optional, only if using IDE coding agents like Cursor or Windsurf).
+### File Origin Breakdown
 
-**What you create yourself:**
-- Your own research topic, research questions, data, literature papers, experiment code, and manuscript text.
+**FROM RESEARCH OS (COPIED):**
+- `RESEARCH.md` (main router)
+- `00-RESEARCH-CORE.md` (universal integrity rules - always loaded)
+- Relevant specialized modules for your current phase
+- `09-project-context-template.md` (template to copy and fill)
+- `AGENTS.md` (when applicable for supported coding agents)
+
+**CREATED BY USER:**
+- `PROJECT-CONTEXT.md` (filled with your research topic, questions, and parameters)
+- Research questions and hypotheses
+- Literature collection (PDFs, notes, synthesis tables)
+- Datasets and instrumentation
+- Experiment outputs and scripts
+- Statistical analyses and charts
+- Manuscript text (LaTeX or Word chapters)
 
 ---
 
 ## Supported Platforms
 
-| Platform | What to Upload | Best For | Guide |
-|---|---|---|---|
-| **ChatGPT Projects** | `RESEARCH.md` + `CORE` + active modules + context | Full research workflow (recommended) | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
-| **ChatGPT (Regular)**| `CORE` + 1 active task module | Quick single-task sessions | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
-| **Gemini Gems** | `RESEARCH.md` + `CORE` + knowledge files | Knowledge-based research sessions | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
-| **Claude Projects** | `RESEARCH.md` + `CORE` + active modules | Deep analysis and long-context review | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
-| **NotebookLM** | Papers + `03-research-literature.md` | Source-grounded literature extraction | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
-| **Coding Agents** | `AGENTS.md` + `research-protocol/` | Computational research in IDE | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
+| Platform | What to Upload | Best For | Persistent Context | Guide |
+|---|---|---|---|---|
+| **ChatGPT Projects** | `RESEARCH.md` + `CORE` + active modules + `PROJECT-CONTEXT.md` | Full research workflow (recommended) | Yes (via Project chats, files, and instructions) | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
+| **ChatGPT (Regular)**| `RESEARCH.md` + `CORE` + 1 active task module | Quick single-task consultations | No (session-only) | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
+| **Gemini Gems** | `RESEARCH.md` + `CORE` + active modules + papers | Knowledge-grounded research sessions | Yes (via Gem Knowledge and system prompt) | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
+| **Claude Projects** | `RESEARCH.md` + `CORE` + active modules + context | Deep analysis and chapter review | Yes (via Project Knowledge and instructions) | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
+| **NotebookLM** | User papers (PDFs) + `03-research-literature.md` | Source-grounded literature extraction | Yes (within Notebook sources) | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
+| **Coding Agents** | Platform instruction file (`AGENTS.md` / `CLAUDE.md`) + `research-protocol/` | Computational research in IDE | Yes (in repository root) | [Platform Map](docs/PLATFORM-USAGE-MAP.md) |
 
-> Note: `AGENTS.md` is specifically for IDE coding agents (Cursor, Windsurf, Copilot, Antigravity). Web AI platforms (ChatGPT Projects, Claude, Gemini) only need `RESEARCH.md`, `00-RESEARCH-CORE.md`, and the active modules.
+> **Coding Agent Instruction Rule:** Use `AGENTS.md` when your coding agent supports the `AGENTS.md` convention. Otherwise, use the platform-native instruction file (e.g., `CLAUDE.md` for Claude Code, or repository instructions for GitHub Copilot). Web AI platforms (ChatGPT Projects, Claude, Gemini) only need `RESEARCH.md`, `00-RESEARCH-CORE.md`, and the active modules.
+
+---
+
+## Research Integrity and Disclaimers
+
+Research OS supports research quality; **it does not guarantee it**.
+
+- It does **not** guarantee thesis acceptance, journal publication, or favorable peer review.
+- It does **not** guarantee flawless methodology or zero confounding factors.
+- It does **not** guarantee specific AI detector scores or plagiarism review outcomes.
+- It **does** provide verification-first guardrails, evidence discipline, and audit procedures to help researchers maintain rigorous academic standards.
+
+You, the researcher, remain solely responsible for the authenticity, execution, and claims of your research.
 
 ---
 
@@ -165,7 +214,7 @@ research-operating-system/
 |
 |-- research-protocol/                 # Core protocol files
 |   |-- RESEARCH.md                    # Main router (start here for research)
-|   |-- AGENTS.md                      # AI agent configuration (optional for coding agents)
+|   |-- AGENTS.md                      # AI agent configuration template
 |   |-- 00-RESEARCH-CORE.md            # Universal research rules (always required)
 |   |-- 01-research-writing.md         # Academic writing module
 |   |-- 02-research-human.md           # Human subjects module

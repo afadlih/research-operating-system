@@ -28,9 +28,9 @@ git clone https://github.com/afadlih/research-operating-system.git
 
 Lihat [Platform Usage Map](PLATFORM-USAGE-MAP.md) untuk panduan operasional tiap platform.
 
-- **Rekomendasi untuk alur kerja penuh:** ChatGPT Projects atau Claude Projects.
+- **Rekomendasi untuk alur kerja penuh:** ChatGPT Projects atau Claude Projects (menyediakan konteks proyek persisten melalui project chats, files, dan instructions).
 - **Rekomendasi untuk ekstraksi literatur:** NotebookLM.
-- **Rekomendasi untuk penelitian komputasi:** Coding agent (Cursor, Windsurf, Antigravity) menggunakan `AGENTS.md`.
+- **Rekomendasi untuk penelitian komputasi:** Coding agent (Cursor, Windsurf, Claude Code) menggunakan file instruksi bawaan platform (`AGENTS.md` atau `CLAUDE.md`).
 
 ### 3. Salin File Protokol ke Proyek Penelitian Anda
 
@@ -38,6 +38,7 @@ Buat folder proyek penelitian Anda dan salin direktori protokol:
 
 ```
 my-research-project/
+|-- AGENTS.md                 # Opsional: disesuaikan untuk coding agent yang didukung
 |-- PROJECT-CONTEXT.md        # Dibuat dari 09-project-context-template.md
 |-- research-protocol/        # Disalin dari repo Research OS
 |   |-- RESEARCH.md
@@ -46,26 +47,36 @@ my-research-project/
 \-- literature/               # Paper PDF, catatan, dan draft Anda
 ```
 
+**Yang disalin dari Research OS:**
+- Folder `research-protocol/` berisi `RESEARCH.md`, `00-RESEARCH-CORE.md`, dan modul aktif.
+- `09-project-context-template.md` (isi dan simpan sebagai `PROJECT-CONTEXT.md`).
+- `AGENTS.md` (opsional - hanya jika coding agent Anda mendukungnya; selain itu gunakan konvensi platform seperti `CLAUDE.md`).
+
+**Yang dibuat sendiri oleh peneliti:**
+- `PROJECT-CONTEXT.md` (berisi topik, pertanyaan penelitian, batasan, dan parameter studi).
+- Dokumen literatur asli (PDF, catatan sintesis), dataset, instrumen, dan naskah bab.
+
 ### 4. Upload Core + Modul Sesuai Tahap
 
 Setiap sesi memerlukan:
 1. `research-protocol/RESEARCH.md` - router utama
 2. `research-protocol/00-RESEARCH-CORE.md` - aturan integritas universal
 
-Tambahkan modul yang sesuai dengan tahap Anda saat ini:
+Tambahkan modul yang sesuai dengan tahap Anda dalam Siklus Penelitian Kanonikal:
 
-| Tahap Penelitian | File yang Diupload |
+| Tahap Siklus Penelitian | File yang Diupload |
 |---|---|
-| Mencari topik penelitian | `03-research-literature.md` |
-| Tinjauan pustaka (literature review) | `03-research-literature.md` + `01-research-writing.md` |
-| Merumuskan pertanyaan & gap | `04-research-methodology.md` |
-| Merancang metodologi | `04-research-methodology.md` (+ `02-research-human.md` jika subjek manusia) |
-| Menjalankan eksperimen | `04-research-methodology.md` + `05-research-experiment.md` |
-| Menganalisis hasil | `06-research-analysis.md` + `05-research-experiment.md` |
-| Menulis bab / naskah | Modul aktif + `01-research-writing.md` |
-| Audit akhir | `07-research-audit.md` + semua modul yang digunakan |
+| Perumusan Masalah (Problem) | `03-research-literature.md` |
+| Tinjauan Pustaka (Evidence / Literature) | `03-research-literature.md` + `01-research-writing.md` |
+| Kesenjangan Penelitian (Research Gap) | `03-research-literature.md` + `04-research-methodology.md` |
+| Pertanyaan Penelitian (Research Question) | `04-research-methodology.md` |
+| Desain Metodologi (Methodology) | `04-research-methodology.md` (+ `02-research-human.md` jika subjek manusia) |
+| Pengumpulan Data / Eksperimen (Data / Experiment) | `04-research-methodology.md` + `05-research-experiment.md` |
+| Analisis Statistik (Analysis) | `06-research-analysis.md` + `05-research-experiment.md` |
+| Penulisan Naskah & Kesimpulan (Writing & Conclusion) | Modul aktif + `01-research-writing.md` |
+| Audit Akhir (Audit) | `07-research-audit.md` + semua modul yang digunakan |
 
-*(Catatan: `AGENTS.md` hanya dibutuhkan jika Anda menggunakan coding agent di IDE seperti Cursor atau Windsurf.)*
+*(Catatan untuk ChatGPT obrolan biasa: RESEARCH.md dapat dihilangkan hanya jika pengguna memilih modul yang tepat secara manual dan tidak memerlukan fungsi router. Rekomendasi default untuk pemula adalah menyertakan RESEARCH.md.)*
 
 ### 5. Mulai dengan Prompt Terstruktur
 
@@ -84,13 +95,20 @@ Jangan langsung menulis draf naskah. Mulai dari klarifikasi bukti dan pertanyaan
 
 ---
 
-## Alur Kerja Penelitian
+## Siklus Penelitian Kanonikal
 
 Ikuti urutan progresif ini selama penelitian berlangsung:
 
 ```
-Rumusan Masalah -> Pertanyaan Penelitian -> Bukti Literatur -> Desain Metodologi
--> Pengumpulan Data -> Validasi Eksperimen -> Analisis Statistik -> Penulisan Akademik -> Audit Akhir
+Problem (Rumusan Masalah)
+  -> Evidence / Literature (Bukti / Literatur)
+    -> Research Gap (Kesenjangan Penelitian)
+      -> Research Question (Pertanyaan Penelitian)
+        -> Methodology (Desain Metodologi)
+          -> Data / Experiment (Data / Eksperimen)
+            -> Analysis (Analisis Hasil)
+              -> Writing & Conclusion (Penulisan & Kesimpulan)
+                -> Audit (Audit Akhir)
 ```
 
 **Jangan melompati tahap.** Setiap tahap dibangun di atas verifikasi dari tahap sebelumnya.
@@ -117,11 +135,18 @@ Rumusan Masalah -> Pertanyaan Penelitian -> Bukti Literatur -> Desain Metodologi
 
 ---
 
+## Penafian Integritas Akademik (Disclaimer)
+
+Research OS mendukung kualitas dan integritas riset; **namun tidak menjaminnya secara otomatis**.
+Framework ini tidak menjamin penerimaan skripsi/tesis, publikasi jurnal, metodologi tanpa cacat, atau skor AI detector tertentu. Framework ini menyediakan panduan verifikasi (*verification-first*) agar peneliti dapat mempertahankan standar akademik yang dapat dipertanggungjawabkan.
+
+---
+
 ## Kesalahan Umum
 
 | Kesalahan | Dampak | Solusi yang Benar |
 |---|---|---|
-| Upload seluruh 14 file sekaligus | Konteks AI penuh dan AI mengabaikan instruksi penting | Upload hanya `CORE` + 1 modul aktif |
+| Upload seluruh 14 file sekaligus | Konteks AI penuh dan AI mengabaikan instruksi penting | Upload hanya `CORE` + `RESEARCH.md` + 1 modul aktif |
 | Meminta AI langsung menulis bab skripsi | Teks menjadi generik, dangkal, dan penuh sitasi halusinasi | Selesaikan tahap masalah, literatur, dan metode dulu |
 | Mengandalkan sitasi dari AI | AI bisa mengarang nama penulis, tahun, dan DOI | Upload PDF asli atau cari langsung di Scopus / Google Scholar |
 | Memakai `AGENTS.md` di ChatGPT web | Menambah instruksi coding yang tidak relevan untuk obrolan web | Gunakan `RESEARCH.md` + `CORE` untuk web |
