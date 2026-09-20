@@ -187,9 +187,3 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
-<p align="center">
-  <strong>Research Operating System</strong> - Evidence before prose. Verification before PASS.
-</p>
-
