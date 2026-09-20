@@ -7,18 +7,18 @@ A complete guide to setting up and using the Research Operating System with your
 ## What You Need
 
 - An AI platform account (ChatGPT, Gemini, Claude, or NotebookLM)
-- The Research Operating System files (this repository)
-- Your research topic or materials
+- The Research Operating System files (from this repository)
+- Your research topic or project materials
 
-No coding skills required.
+No coding skills are required for standard research workflows.
 
 ---
 
-## Step-by-Step Setup
+## Quick Start (5 Steps)
 
-### 1. Download This Repository
+### 1. Download or Clone This Repository
 
-Click the green **Code** button on GitHub and select **Download ZIP**, or clone:
+Download this repository as a ZIP, or clone it using Git:
 
 ```bash
 git clone https://github.com/afadlih/research-operating-system.git
@@ -26,58 +26,74 @@ git clone https://github.com/afadlih/research-operating-system.git
 
 ### 2. Choose Your Platform
 
-See the [Platform Usage Map](PLATFORM-USAGE-MAP.md) for detailed platform-specific instructions.
+See the [Platform Usage Map](PLATFORM-USAGE-MAP.md) for detailed platform-specific setup instructions.
 
-**Recommended:** ChatGPT Projects for the full workflow.
+- **Recommended for full research:** ChatGPT Projects or Claude Projects.
+- **Recommended for literature grounding:** NotebookLM.
+- **Recommended for computational research:** Cursor, Windsurf, or Claude Code using `AGENTS.md`.
 
-### 3. Upload the Core Files
+### 3. Copy Protocol Files to Your Project
 
-Every research task requires at minimum:
+Create your research project folder and copy the protocol directory:
 
+```
+my-research-project/
+|-- PROJECT-CONTEXT.md        # Copied & filled from 09-project-context-template.md
+|-- research-protocol/        # Copied from this repo
+|   |-- RESEARCH.md
+|   |-- 00-RESEARCH-CORE.md
+|   \-- [active-modules].md
+\-- literature/               # Your sources, notes, and drafts
+```
+
+### 4. Upload Core + Task-Specific Module
+
+Every session requires:
 1. `research-protocol/RESEARCH.md` - the main router
 2. `research-protocol/00-RESEARCH-CORE.md` - universal research rules
 
-### 4. Upload Task-Specific Modules
-
-Based on your current task, add the relevant module(s):
+Add the module that matches your current phase:
 
 | Your Task | Upload These Modules |
 |---|---|
 | Finding a research topic | `03-research-literature.md` |
 | Literature review | `03-research-literature.md` + `01-research-writing.md` |
 | Defining research questions | `04-research-methodology.md` |
-| Designing methodology | `04-research-methodology.md` (+ `02-research-human.md` if involving people) |
+| Designing methodology | `04-research-methodology.md` (+ `02-research-human.md` if human subjects) |
 | Running experiments | `04-research-methodology.md` + `05-research-experiment.md` |
 | Analyzing results | `06-research-analysis.md` + `05-research-experiment.md` |
-| Writing chapters | Relevant module + `01-research-writing.md` |
+| Writing chapters | Active module + `01-research-writing.md` |
 | Final audit | `07-research-audit.md` + all modules used |
 
-### 5. Start With a Prompt
+*(Note: `AGENTS.md` is only needed if you are using IDE coding agents like Cursor or Windsurf.)*
+
+### 5. Start With a Structured Prompt
 
 Use the Prompt Library ([English](../prompts/PROMPT-LIBRARY-EN.md) | [Indonesia](../prompts/PROMPT-LIBRARY-ID.md)) for ready-made prompts, or tell the AI:
 
 ```
-I am starting a research project.
-Use the Research Operating System.
+I am starting a research project using the Research Operating System.
+I have loaded RESEARCH.md and 00-RESEARCH-CORE.md.
+My topic is: [Insert Topic].
 Help me define:
-- problem
+- problem statement
 - evidence needed
-- feasibility
-Do not jump directly to writing.
+- methodological feasibility
+Do not jump directly to writing prose.
 ```
 
 ---
 
-## Research Workflow
+## Research Workflow Lifecycle
 
-Follow this general order:
+Follow this progressive order throughout your study:
 
 ```
-Problem  ->  Research Question  ->  Literature Evidence  ->  Methodology
- ->  Data Collection  ->  Experiment  ->  Analysis  ->  Writing  ->  Final Audit
+Problem Definition -> Research Questions -> Literature Evidence -> Methodology Design
+-> Data Collection -> Experiment Validation -> Statistical Analysis -> Academic Writing -> Final Audit
 ```
 
-**Do not skip ahead.** Each stage builds on the previous one.
+**Do not skip ahead.** Each phase builds upon verified outputs from the previous phase.
 
 ---
 
@@ -85,57 +101,38 @@ Problem  ->  Research Question  ->  Literature Evidence  ->  Methodology
 
 ### DO
 
-- Always load `00-RESEARCH-CORE.md` for every task
-- Load only the modules you need right now
-- Follow the router's task routing table
-- Verify claims with evidence before accepting them
-- Run the final audit before declaring work complete
+- Always load `00-RESEARCH-CORE.md` for every task.
+- Load only the modules you need right now.
+- Fill out `PROJECT-CONTEXT.md` so the AI understands your constraints.
+- Verify claims against actual published papers before accepting them.
+- Run the audit module (`07-research-audit.md`) before finalizing any chapter.
 
 ### DO NOT
 
-- Upload all files at once without purpose
-- Skip from problem definition straight to writing
-- Accept AI output without checking evidence
-- Let AI fabricate citations or results
-- Treat AI suggestions as verified facts
+- Upload all files at once without purpose.
+- Skip from problem definition straight to writing manuscript prose.
+- Accept AI output without checking evidence and source attribution.
+- Allow AI to invent citations, benchmarks, or sample statistics.
+- Treat AI suggestions as verified empirical facts.
 
 ---
 
 ## Common Mistakes
 
-| Mistake | Why It's a Problem | What to Do Instead |
+| Mistake | Why It Causes Problems | Better Approach |
 |---|---|---|
-| Uploading all 14 files at once | Confuses the AI, wastes context | Upload only what your current task needs |
-| Skipping literature review | Your research gap has no evidence basis | Build evidence first, then identify gaps |
-| Accepting AI-generated citations | AI can fabricate authors, DOIs, and dates | Verify every citation against actual sources |
-| Writing before methodology is solid | Your writing will need complete rewrites | Design methodology first, write second |
-| Skipping the audit | Integrity issues go undetected | Always run `07-research-audit.md` at the end |
+| Uploading all 14 protocol files | Overloads context window and degrades instruction following | Upload only `CORE` + active module |
+| Asking AI to write a thesis chapter first | Produces generic, unverified text with fake citations | Complete literature and methodology phases first |
+| Relying on AI for literature citations | LLMs can hallucinate titles, authors, and DOIs | Upload real papers/PDFs or verify in Google Scholar/Scopus |
+| Using `AGENTS.md` in ChatGPT web | Adds redundant coding instructions to a non-coding chat | Use `RESEARCH.md` + `CORE` for ChatGPT web |
+| Skipping the audit check | Leaves unaddressed confounding variables or methodology gaps | Run `07-research-audit.md` before submission |
 
 ---
 
-## Domain Support
+## Next Steps
 
-The system works across 10+ research domains:
-
-- Computer Science / AI
-- Engineering
-- Education
-- Psychology
-- Health / Medicine
-- Business / Management
-- Economics
-- Social Science
-- Law
-- Humanities
-
-See [10-research-domain-adaptation.md](../research-protocol/10-research-domain-adaptation.md) for domain-specific guidance.
-
----
-
-## Need Help?
-
-- [File Function Map](FILE-FUNCTION-MAP.md) - what each file does
-- [Platform Usage Map](PLATFORM-USAGE-MAP.md) - platform setup details
-- [Prompt Library (EN)](../prompts/PROMPT-LIBRARY-EN.md) - ready-to-use prompts
-- [Pustaka Prompt (ID)](../prompts/PROMPT-LIBRARY-ID.md) - prompt siap pakai
-- [RESEARCH.md](../research-protocol/RESEARCH.md) - the main router with full task routing table
+- [START-HERE.md](../START-HERE.md) - quick onboarding overview
+- [Platform Usage Map](PLATFORM-USAGE-MAP.md) - platform-specific copy-paste guides
+- [File Function Map](FILE-FUNCTION-MAP.md) - detailed index of every file
+- [Prompt Library (EN)](../prompts/PROMPT-LIBRARY-EN.md) - 16 categorized prompts
+- [RESEARCH.md](../research-protocol/RESEARCH.md) - the main router with full routing table

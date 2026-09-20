@@ -7,183 +7,132 @@ Panduan lengkap untuk menyiapkan dan menggunakan Research Operating System di pl
 ## Yang Anda Butuhkan
 
 - Akun platform AI (ChatGPT, Gemini, Claude, atau NotebookLM)
-- File Research Operating System (repository ini)
+- File Research Operating System (dari repository ini)
 - Topik atau materi penelitian Anda
 
-Tidak perlu kemampuan coding.
+Tidak memerlukan kemampuan coding untuk alur kerja penelitian standar.
 
 ---
 
-## Langkah-Langkah Setup
+## Panduan Cepat (5 Langkah)
 
-### 1. Download Repository Ini
+### 1. Unduh atau Clone Repository Ini
 
-Klik tombol hijau **Code** di GitHub dan pilih **Download ZIP**, atau clone:
+Unduh repository ini sebagai file ZIP, atau gunakan Git:
 
 ```bash
 git clone https://github.com/afadlih/research-operating-system.git
 ```
 
-### 2. Pilih Platform AI
+### 2. Pilih Platform AI Anda
 
-Lihat [Platform Usage Map](PLATFORM-USAGE-MAP.md) untuk instruksi per platform.
+Lihat [Platform Usage Map](PLATFORM-USAGE-MAP.md) untuk panduan operasional tiap platform.
 
-**Rekomendasi:** ChatGPT Projects untuk workflow penuh.
+- **Rekomendasi untuk alur kerja penuh:** ChatGPT Projects atau Claude Projects.
+- **Rekomendasi untuk ekstraksi literatur:** NotebookLM.
+- **Rekomendasi untuk penelitian komputasi:** Coding agent (Cursor, Windsurf, Antigravity) menggunakan `AGENTS.md`.
 
-### 3. Upload File Inti
+### 3. Salin File Protokol ke Proyek Penelitian Anda
 
-Setiap tugas penelitian minimal membutuhkan:
-
-1. `research-protocol/RESEARCH.md` - router utama
-2. `research-protocol/00-RESEARCH-CORE.md` - aturan integritas penelitian universal
-
-### 4. Upload Modul Sesuai Tugas
-
-Berdasarkan tugas Anda saat ini, tambahkan modul yang relevan:
-
-| Tugas Anda | Upload Modul Ini |
-|---|---|
-| Mencari topik penelitian | `03-research-literature.md` |
-| Review literatur | `03-research-literature.md` + `01-research-writing.md` |
-| Merumuskan research question | `04-research-methodology.md` |
-| Desain metodologi | `04-research-methodology.md` (+ `02-research-human.md` jika melibatkan manusia) |
-| Menjalankan eksperimen | `04-research-methodology.md` + `05-research-experiment.md` |
-| Analisis hasil | `06-research-analysis.md` + `05-research-experiment.md` |
-| Menulis bab | Modul relevan + `01-research-writing.md` |
-| Audit akhir | `07-research-audit.md` + semua modul yang digunakan |
-
-### 5. Mulai dengan Prompt
-
-Gunakan Prompt Library ([English](../prompts/PROMPT-LIBRARY-EN.md) | [Indonesia](../prompts/PROMPT-LIBRARY-ID.md)) untuk prompt siap pakai, atau sampaikan ke AI:
+Buat folder proyek penelitian Anda dan salin direktori protokol:
 
 ```
-Saya memulai proyek penelitian.
-Gunakan Research Operating System.
-Bantu saya mendefinisikan:
-- masalah penelitian
-- bukti yang diperlukan
-- kelayakan
-Jangan langsung ke tahap penulisan.
+my-research-project/
+|-- PROJECT-CONTEXT.md        # Dibuat dari 09-project-context-template.md
+|-- research-protocol/        # Disalin dari repo Research OS
+|   |-- RESEARCH.md
+|   |-- 00-RESEARCH-CORE.md
+|   \-- [modul-aktif].md
+\-- literature/               # Paper PDF, catatan, dan draft Anda
+```
+
+### 4. Upload Core + Modul Sesuai Tahap
+
+Setiap sesi memerlukan:
+1. `research-protocol/RESEARCH.md` - router utama
+2. `research-protocol/00-RESEARCH-CORE.md` - aturan integritas universal
+
+Tambahkan modul yang sesuai dengan tahap Anda saat ini:
+
+| Tahap Penelitian | File yang Diupload |
+|---|---|
+| Mencari topik penelitian | `03-research-literature.md` |
+| Tinjauan pustaka (literature review) | `03-research-literature.md` + `01-research-writing.md` |
+| Merumuskan pertanyaan & gap | `04-research-methodology.md` |
+| Merancang metodologi | `04-research-methodology.md` (+ `02-research-human.md` jika subjek manusia) |
+| Menjalankan eksperimen | `04-research-methodology.md` + `05-research-experiment.md` |
+| Menganalisis hasil | `06-research-analysis.md` + `05-research-experiment.md` |
+| Menulis bab / naskah | Modul aktif + `01-research-writing.md` |
+| Audit akhir | `07-research-audit.md` + semua modul yang digunakan |
+
+*(Catatan: `AGENTS.md` hanya dibutuhkan jika Anda menggunakan coding agent di IDE seperti Cursor atau Windsurf.)*
+
+### 5. Mulai dengan Prompt Terstruktur
+
+Gunakan Pustaka Prompt ([Indonesia](../prompts/PROMPT-LIBRARY-ID.md) | [English](../prompts/PROMPT-LIBRARY-EN.md)) atau gunakan prompt pembuka berikut:
+
+```
+Saya memulai penelitian menggunakan Research Operating System.
+Saya telah mengupload RESEARCH.md dan 00-RESEARCH-CORE.md.
+Topik penelitian saya: [Tuliskan Topik Anda].
+Bantu saya merumuskan:
+- rumusan masalah
+- bukti empiris yang dibutuhkan
+- kelayakan metodologis
+Jangan langsung menulis draf naskah. Mulai dari klarifikasi bukti dan pertanyaan penelitian.
 ```
 
 ---
 
 ## Alur Kerja Penelitian
 
-Ikuti urutan umum berikut:
+Ikuti urutan progresif ini selama penelitian berlangsung:
 
 ```
-Masalah  ->  Pertanyaan Penelitian  ->  Bukti Literatur  ->  Metodologi
- ->  Pengumpulan Data  ->  Eksperimen  ->  Analisis  ->  Penulisan  ->  Audit Akhir
+Rumusan Masalah -> Pertanyaan Penelitian -> Bukti Literatur -> Desain Metodologi
+-> Pengumpulan Data -> Validasi Eksperimen -> Analisis Statistik -> Penulisan Akademik -> Audit Akhir
 ```
 
-**Jangan melompati tahapan.** Setiap tahap dibangun dari tahap sebelumnya.
+**Jangan melompati tahap.** Setiap tahap dibangun di atas verifikasi dari tahap sebelumnya.
 
 ---
 
-## Setup Per Platform
+## Hal yang Boleh dan Tidak Boleh Dilakukan
 
-### ChatGPT Projects (Rekomendasi)
+### Boleh (DO)
 
-1. Buat Project baru di ChatGPT.
-2. Upload file berikut ke Project:
-   - `research-protocol/AGENTS.md`
-   - `research-protocol/RESEARCH.md`
-   - `research-protocol/00-RESEARCH-CORE.md`
-   - Modul yang Anda butuhkan
-3. Set instruksi Project:
+- Selalu sertakan `00-RESEARCH-CORE.md` di setiap sesi.
+- Upload hanya modul yang dibutuhkan untuk tahap yang sedang dikerjakan.
+- Isi `PROJECT-CONTEXT.md` agar AI memahami batasan dan konteks studi Anda.
+- Verifikasi setiap sitasi dan klaim langsung ke paper aslinya.
+- Lakukan audit akhir (`07-research-audit.md`) sebelum menganggap pekerjaan selesai.
 
-```
-Gunakan RESEARCH.md sebagai router.
-Gunakan modul sesuai kebutuhan.
-Jangan membuat evidence, citation, atau hasil yang tidak diverifikasi.
-```
+### Tidak Boleh (DO NOT)
 
-### ChatGPT Chat Biasa
-
-1. Buka chat baru.
-2. Lampirkan:
-   - `RESEARCH.md`
-   - `00-RESEARCH-CORE.md`
-   - Modul sesuai tugas
-3. Sampaikan tugas Anda.
-
-### Gemini Gems
-
-1. Buat Gem baru.
-2. Upload file protocol sebagai knowledge.
-3. Set instruksi Gem merujuk ke `RESEARCH.md`.
-
-### Claude Projects
-
-1. Buat Project baru.
-2. Tambahkan file protocol ke Project Knowledge.
-3. Atau buat `CLAUDE.md` dengan pointer ke research protocol.
-
-### NotebookLM
-
-1. Buat Notebook baru.
-2. Upload paper penelitian sebagai sumber.
-3. Upload `03-research-literature.md` untuk panduan analisis literatur.
-4. Gunakan terutama untuk literature review dan evidence extraction.
-
----
-
-## Yang Boleh dan Tidak Boleh
-
-### BOLEH
-
-- Selalu load `00-RESEARCH-CORE.md` untuk setiap tugas
-- Load hanya modul yang dibutuhkan saat ini
-- Ikuti task routing table di RESEARCH.md
-- Verifikasi klaim dengan bukti sebelum menerimanya
-- Jalankan audit akhir sebelum menyatakan selesai
-
-### TIDAK BOLEH
-
-- Upload semua file sekaligus tanpa tujuan
-- Langsung loncat dari definisi masalah ke penulisan
-- Terima output AI tanpa cek bukti
-- Biarkan AI membuat sitasi atau hasil palsu
-- Perlakukan saran AI sebagai fakta terverifikasi
+- Mengupload semua 14 file sekaligus tanpa tujuan yang jelas.
+- Langsung meminta AI menulis bab tanpa merumuskan metodologi dan bukti.
+- Menerima mentah-mentah hasil AI tanpa memverifikasi data dan sumber.
+- Membiarkan AI mengarang sitasi, judul artikel, atau angka statistik.
+- Menganggap saran AI sebagai fakta ilmiah sebelum diverifikasi secara mandiri.
 
 ---
 
 ## Kesalahan Umum
 
-| Kesalahan | Mengapa Bermasalah | Yang Harus Dilakukan |
+| Kesalahan | Dampak | Solusi yang Benar |
 |---|---|---|
-| Upload 14 file sekaligus | Membingungkan AI, boros konteks | Upload hanya sesuai kebutuhan tugas |
-| Skip review literatur | Research gap tanpa dasar bukti | Bangun bukti dulu, baru identifikasi gap |
-| Terima sitasi dari AI tanpa cek | AI bisa memalsukan penulis, DOI, tanggal | Verifikasi setiap sitasi ke sumber asli |
-| Menulis sebelum metodologi solid | Tulisan harus ditulis ulang total | Desain metodologi dulu, tulis kemudian |
-| Skip audit akhir | Masalah integritas tidak terdeteksi | Selalu jalankan `07-research-audit.md` |
+| Upload seluruh 14 file sekaligus | Konteks AI penuh dan AI mengabaikan instruksi penting | Upload hanya `CORE` + 1 modul aktif |
+| Meminta AI langsung menulis bab skripsi | Teks menjadi generik, dangkal, dan penuh sitasi halusinasi | Selesaikan tahap masalah, literatur, dan metode dulu |
+| Mengandalkan sitasi dari AI | AI bisa mengarang nama penulis, tahun, dan DOI | Upload PDF asli atau cari langsung di Scopus / Google Scholar |
+| Memakai `AGENTS.md` di ChatGPT web | Menambah instruksi coding yang tidak relevan untuk obrolan web | Gunakan `RESEARCH.md` + `CORE` untuk web |
+| Melewatkan tahap audit | Celah metodologis atau variabel pengganggu tidak terdeteksi | Jalankan `07-research-audit.md` sebelum sidang/submit |
 
 ---
 
-## Dukungan Multi-Domain
+## Langkah Selanjutnya
 
-Sistem ini mendukung 10+ bidang penelitian:
-
-- Ilmu Komputer / AI
-- Teknik
-- Pendidikan
-- Psikologi
-- Kesehatan / Kedokteran
-- Bisnis / Manajemen
-- Ekonomi
-- Ilmu Sosial
-- Hukum
-- Humaniora
-
-Lihat [10-research-domain-adaptation.md](../research-protocol/10-research-domain-adaptation.md) untuk panduan per domain.
-
----
-
-## Butuh Bantuan?
-
-- [File Function Map](FILE-FUNCTION-MAP.md) - fungsi setiap file
-- [Platform Usage Map](PLATFORM-USAGE-MAP.md) - detail setup per platform
-- [Prompt Library (EN)](../prompts/PROMPT-LIBRARY-EN.md) - ready-to-use prompts
-- [Pustaka Prompt (ID)](../prompts/PROMPT-LIBRARY-ID.md) - prompt siap pakai
+- [START-HERE.md](../START-HERE.md) - panduan onboarding singkat
+- [Platform Usage Map](PLATFORM-USAGE-MAP.md) - panduan operasional tiap platform
+- [File Function Map](FILE-FUNCTION-MAP.md) - daftar lengkap fungsi setiap file
+- [Pustaka Prompt (ID)](../prompts/PROMPT-LIBRARY-ID.md) - 16 template prompt siap pakai
 - [RESEARCH.md](../research-protocol/RESEARCH.md) - router utama dengan tabel routing lengkap

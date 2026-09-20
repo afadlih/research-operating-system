@@ -1,133 +1,179 @@
 # Platform Usage Map
 
-Setup instructions for each supported AI platform.
+Operational setup instructions for each supported AI platform.
 
 ---
 
 ## Quick Reference
 
-| Platform | What to Upload | Best For |
-|---|---|---|
-| **ChatGPT Projects** | `AGENTS.md` + `RESEARCH.md` + needed modules | Full research workflow (recommended) |
-| **ChatGPT (regular chat)** | `RESEARCH.md` + `00-RESEARCH-CORE.md` + needed module | Quick single-task research |
-| **Gemini Gems** | `RESEARCH.md` + knowledge files | Knowledge-based research sessions |
-| **Claude Projects** | `RESEARCH.md` + modules | Deep analysis and long-context tasks |
-| **NotebookLM** | Papers + `03-research-literature.md` | Literature analysis and evidence extraction |
-| **Coding Agents** | `AGENTS.md` | Computational research in IDE |
+| Platform | What to Upload | Best For | Role of AGENTS.md |
+|---|---|---|---|
+| **ChatGPT Projects** | `RESEARCH.md` + `CORE` + active modules + `PROJECT-CONTEXT.md` | Full research workflow (recommended) | Not needed |
+| **ChatGPT (Regular)**| `00-RESEARCH-CORE.md` + 1 active task module | Quick single-task sessions | Not needed |
+| **Gemini Gems** | `RESEARCH.md` + `CORE` + active modules + user papers | Knowledge-grounded sessions | Not needed |
+| **Claude Projects** | `RESEARCH.md` + `CORE` + active modules + context | Deep analysis & chapter review | Optional (or use `CLAUDE.md`) |
+| **NotebookLM** | User papers (PDFs) + `03-research-literature.md` | Source-grounded literature extraction | Not needed |
+| **Coding Agents** | `AGENTS.md` in root + `research-protocol/` in repo | Computational research in IDE | **Required** in project root |
 
-> **Rule:** Upload only the modules relevant to your current task. Do not upload everything at once.
+> **Universal Rule:** Upload only the modules relevant to your current task. Never upload all files at once without purpose.
 
 ---
 
 ## ChatGPT Projects (Recommended)
 
-ChatGPT Projects is the recommended platform for the full research workflow.
+ChatGPT Projects is recommended for managing a complete research lifecycle with persistent memory and document attachments.
 
-### Setup
+### What to Upload to Project Files
+- `research-protocol/RESEARCH.md` (the main router)
+- `research-protocol/00-RESEARCH-CORE.md` (universal integrity rules)
+- The specialized module for your current phase (e.g., `03-research-literature.md` or `04-research-methodology.md`)
+- Your filled `PROJECT-CONTEXT.md` (copied from `09-project-context-template.md`)
 
-1. Create a new Project in ChatGPT.
-2. Upload these files to the Project:
-   - `research-protocol/AGENTS.md`
-   - `research-protocol/RESEARCH.md`
-   - `research-protocol/00-RESEARCH-CORE.md`
-   - The specialized modules you need (see [File Function Map](FILE-FUNCTION-MAP.md))
-   - Your `PROJECT-CONTEXT.md` (if you have one)
-3. Set the Project Instructions to:
+*(Note: `AGENTS.md` is NOT required for ChatGPT Projects.)*
+
+### Project Instructions (Copy-Paste)
+
+Paste the following into your ChatGPT Project's **Instructions**:
 
 ```
-Use RESEARCH.md as the router.
-Load modules based on the current task.
-Do not fabricate evidence, citations, or results.
+You are a disciplined academic research collaborator operating under the Research Operating System framework.
+Always consult research-protocol/RESEARCH.md as your router and enforce the rules in research-protocol/00-RESEARCH-CORE.md.
+Never fabricate citations, invent benchmark results, or hallucinate empirical data.
+If evidence is missing or a claim is unsupported, pause and ask for verifiable sources before continuing.
+Follow the active module guidelines and require verification before declaring any task complete.
 ```
 
-### Tips
+### First Prompt to Start Your Session
 
-- Start with CORE + one module, then add more as your research progresses.
-- Upload your own papers/sources for literature review tasks.
-- Use the Prompt Library ([EN](../prompts/PROMPT-LIBRARY-EN.md) | [ID](../prompts/PROMPT-LIBRARY-ID.md)) to get started.
+```
+I have uploaded the Research Operating System protocol files along with my PROJECT-CONTEXT.md.
+My research topic is: [Insert your topic].
+My current task is: [e.g., Defining Research Gap / Designing Methodology].
+Please confirm that you have loaded RESEARCH.md and 00-RESEARCH-CORE.md, review my project context, and outline the first verification step.
+```
 
 ---
 
 ## ChatGPT (Regular Chat)
 
-For quick, single-task research without a full Project setup.
+For quick, single-task consultations without creating a Project.
 
-### Setup
+### What to Upload
+- Attach `research-protocol/00-RESEARCH-CORE.md`
+- Attach the 1 module specific to your task (e.g., `03-research-literature.md`)
 
-1. Open a new chat.
-2. Attach these files:
-   - `research-protocol/RESEARCH.md`
-   - `research-protocol/00-RESEARCH-CORE.md`
-   - The module for your specific task
-3. Tell ChatGPT what task you are working on.
+### First Prompt
+```
+I am attaching 00-RESEARCH-CORE.md and [Module Name].
+Please act as a research collaborator for the following task: [Describe task].
+Do not jump to writing. Ask clarifying questions on evidence and methodology first.
+```
 
 ### Limitations
-
-- No persistent project context between chats.
-- Fewer files can be attached compared to Projects.
+- **No persistent memory:** Context is lost when you close or start a new chat.
+- **Attachment limits:** Limited number of files per message.
+- **Context drift:** In long conversations, the model may forget early instructions.
 
 ---
 
 ## Gemini Gems
 
-### Setup
+Gemini Gems allow you to create custom AI assistants with uploaded knowledge files.
 
-1. Create a new Gem.
-2. Upload the protocol files as knowledge.
-3. Set the Gem instructions to reference `RESEARCH.md` as the router.
+### What to Upload to Knowledge
+- `research-protocol/RESEARCH.md`
+- `research-protocol/00-RESEARCH-CORE.md`
+- Active specialized modules (e.g., `03-research-literature.md`, `04-research-methodology.md`)
+- Your literature PDFs or notes
 
-### Tips
+### Gem Instructions (Copy-Paste)
 
-- Gemini works well for knowledge-heavy tasks.
-- Upload your research papers alongside the protocol files.
+```
+You are a research collaborator guided by the Research Operating System.
+Use RESEARCH.md to route requests and strictly apply 00-RESEARCH-CORE.md to all responses.
+Ground your reasoning in uploaded literature and verified evidence.
+Clearly distinguish between established findings, conflicting evidence, and open gaps.
+Never generate synthetic citations or claim statistical significance without verified data.
+```
+
+### First Prompt
+```
+I have initialized this Gem with Research OS protocols.
+My research focus is: [Insert topic].
+Let's begin by reviewing the core research questions and required evidence.
+```
 
 ---
 
 ## Claude Projects
 
-### Setup
+Claude Projects excel at long-context document analysis, multi-paper synthesis, and chapter-length reviews.
 
-1. Create a new Project in Claude.
-2. Add protocol files to Project Knowledge.
-3. Alternatively, create a `CLAUDE.md` file with the research protocol pointer from [RESEARCH.md Section 21](../research-protocol/RESEARCH.md).
+### What to Upload to Project Knowledge
+- `research-protocol/RESEARCH.md`
+- `research-protocol/00-RESEARCH-CORE.md`
+- Active specialized modules
+- Your `PROJECT-CONTEXT.md` and research drafts
 
-### Tips
+### Role of `CLAUDE.md` vs `AGENTS.md`
+- In Claude Projects (web interface), upload the protocol markdown files to Project Knowledge and set project instructions.
+- If using **Claude Code** (CLI agent), place a `CLAUDE.md` in your project root pointing to `research-protocol/RESEARCH.md` (see [RESEARCH.md Section 21](../research-protocol/RESEARCH.md)).
+- `AGENTS.md` is reserved for IDE coding assistants (Cursor, Windsurf).
 
-- Claude excels at long-context analysis.
-- Good for reviewing entire thesis chapters.
+### Project Custom Instructions
+```
+Act as an academic research advisor under Research Operating System rules.
+Follow RESEARCH.md and 00-RESEARCH-CORE.md.
+Prioritize methodological rigor, threat detection, and calibrated claims.
+Reject vague statements and highlight missing evidence.
+```
 
 ---
 
 ## NotebookLM
 
-### Setup
+NotebookLM is specifically designed for **source-grounded literature analysis** based on uploaded documents.
 
-1. Create a new Notebook.
-2. Upload your research papers as sources.
-3. Upload `research-protocol/03-research-literature.md` for literature analysis guidance.
+### What to Upload
+- Your research papers (PDFs, downloaded articles)
+- Your literature notes and summaries
+- `research-protocol/03-research-literature.md` (as guidance for gap analysis)
 
-### Best For
+### What NotebookLM Is Best For
+- Extracting exact quotes and citations from uploaded papers.
+- Cross-paper comparison and matrix generation.
+- Identifying contradictions across source materials.
 
-- Literature analysis and evidence extraction.
-- Comparing multiple papers.
-- Building evidence matrices.
-
-### Limitations
-
-- Not ideal for the full research workflow.
-- Use alongside another platform for methodology/experiment work.
+### Important Boundaries & Limitations
+- **Not for general research orchestration:** NotebookLM cannot plan experiments, write code, or route modular protocols.
+- **Do not treat as a full repository agent:** It only knows what you upload as sources.
+- **Workflow:** Use NotebookLM for deep literature extraction, then take the extracted evidence matrices into ChatGPT Projects or Claude for methodology and writing.
 
 ---
 
-## Coding Agents (Cursor, Windsurf, Antigravity, etc.)
+## Coding Agents (Cursor, Windsurf, Claude Code, Antigravity, GitHub Copilot)
 
-### Setup
+For computational research, experiment code, data pipelines, and reproducible benchmarks.
 
-1. Place `research-protocol/AGENTS.md` in your project root or agent configuration.
-2. The agent will follow research integrity rules when working on computational research tasks.
+### Setup Steps
+1. Copy `AGENTS.md` to the **root** of your research project repository:
+   ```
+   my-research-project/AGENTS.md
+   ```
+2. Place the `research-protocol/` directory inside your research repository:
+   ```
+   my-research-project/research-protocol/
+   ```
+3. The coding agent will automatically discover `AGENTS.md` on startup.
+
+### First Prompt to Coding Agent
+```
+Read AGENTS.md and research-protocol/00-RESEARCH-CORE.md.
+We are implementing the experiment pipeline for: [Describe experiment].
+Enforce zero data leakage, seed logging, baseline fairness, and reproducibility standards.
+```
 
 ### Best For
-
-- Experiment code that needs research discipline.
-- Data processing scripts with traceability requirements.
-- Computational reproducibility.
+- Experiment implementation with leak-prevention checks.
+- Reproducible data processing pipelines.
+- Traceable statistical analysis scripts.
